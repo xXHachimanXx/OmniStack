@@ -1,0 +1,14 @@
+Toda a parte de crud de um recurso é feita pelas rotas dos tipos:
+
+    get    -> pegar uma informação no site
+    post   -> cadastrar uma informação
+    put    -> editar informação
+    delete -> deletar
+
+MIDLEWARE: é uma função do tipo " (req, res) => {} ". Ou seja, é uma função que recebe dois parâmetro
+           ("req" e "res") e retorna alguma coisa => {}. Traduzindo para o português, MIDLEWARE é um 
+           interceptador de requisições.
+
+           res -> resposta para o client
+           req -> requisição
+                      
