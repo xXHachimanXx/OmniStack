@@ -8,7 +8,7 @@ const postSchema = new mongoose.Schema
     author: String, 
     place: String,  
     description: String,
-    hashtacgs: String,
+    hashtags: String,
     image: String,
     likes: 
     {
@@ -16,3 +16,5 @@ const postSchema = new mongoose.Schema
         default: 0,
     }
 }, {timestamps: true} ); // timestamps cria registros de datas de criação e modificação de cada atributo
+
+module.exports = mongoose.model('Post', postSchema);
