@@ -1,11 +1,12 @@
 //DEPENDÊNCIAS
 const express = require('express');
-const routes = new express.Router();
+const PostController = require('./controllers/PostController');
+const multer = require('multer');
+const uploadConfig = require('./config/Upload');
 
-//criar rota do tipo get acessível via navegador
-//o midleware intercepta a requisição feita na rota raiz ('/')
-routes.get('/', (req, res) => {
-    return res.send(`Olá ${req.query.name}`);
-});
+const routes = new express.Router();
+const upload = multer(uploadConfig);
+
+routes.post('/posts', upload.single('image'), PostController.store);
 
 module.exports = routes;
